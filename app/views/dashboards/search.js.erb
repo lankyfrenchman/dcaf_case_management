@@ -1,2 +1,6 @@
 $('#search_results').empty();
-$("#search_results").append("<%= escape_javascript(render partial: 'dashboards/table_content', locals: { title: 'Search results', table_type: 'search_results', pregnancies: @results } ) %>");
+<% if @results.present? %>
+  $("#search_results").append("<%= escape_javascript(render 'dashboards/table_content', title: 'Search results', table_type: 'search_results', pregnancies: @results ) %>");
+<% else %>
+  $("#search_results").append("<%= escape_javascript(render 'patients/new_patient', patient: @patient) %>");
+<% end %>

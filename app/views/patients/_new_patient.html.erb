@@ -1,5 +1,5 @@
 <h3><small>Your search produced no results, so add a new patient:</small></h3>
-<%= bootstrap_form_for @patient do |f| %>
+<%= bootstrap_form_for patient do |f| %>
   <div class="col-md-2">
     <%= f.text_field :primary_phone, label: "Phone Number" %>
   </div>
@@ -7,9 +7,9 @@
     <%= f.text_field :name, label: "Name" %>
   </div>
 
-  <%= f.fields_for @pregnancy do |p| %>
+  <%= f.fields_for :pregnancies do |p| %>
     <div class="col-md-2">
-      <%= p.text_field :last_menstrual_period_lmp_type, label: "LMP" %>
+      <%= p.text_field :last_menstrual_period_weeks, label: "LMP Weeks" %>
     </div>
 
     <div class="col-md-2">

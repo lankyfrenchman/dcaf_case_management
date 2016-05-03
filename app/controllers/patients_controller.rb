@@ -12,6 +12,6 @@ class PatientsController < ApplicationController
   private
 
   def patient_params
-    params.require(:patient).permit(:name, :primary_phone, :secondary_phone)
+    params.require(:patient).permit(:name, :primary_phone, :secondary_phone, pregnancies_attributes: [:last_menstrual_period_weeks, :voicemail_ok])
   end
 end

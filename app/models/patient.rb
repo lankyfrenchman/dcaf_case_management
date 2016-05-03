@@ -8,6 +8,8 @@ class Patient
 
   validates_presence_of :name, :primary_phone
 
+  accepts_nested_attributes_for :pregnancies
+
   field :name, type: String # strip
   field :primary_phone, type: String # validate
   field :secondary_person, type: String

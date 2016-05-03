@@ -12,6 +12,11 @@ class DashboardsController < ApplicationController
       @results << patient.pregnancies.most_recent
     end
 
+    unless @results.present?
+      @patient = Patient.new
+      @patient.pregnancies.build
+    end
+
     respond_to { |format| format.js }
   end
 end
